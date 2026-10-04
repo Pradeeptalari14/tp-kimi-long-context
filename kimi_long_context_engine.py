@@ -10,6 +10,7 @@ import hashlib
 from typing import Dict, List, Optional, Tuple, Any
 import torch
 
+
 class HierarchicalKVCache:
     """Manages multi-tier KV cache for Moonshot Kimi K1.5 up to 2M tokens."""
 
@@ -40,7 +41,7 @@ class HierarchicalKVCache:
     def store_kv_chunk(self, chunk_id: str, key_states: torch.Tensor, value_states: torch.Tensor):
         """Stores KV states into VRAM if under budget; otherwise offloads asynchronously to NVMe."""
         tokens_in_chunk = key_states.shape[1] if key_states.dim() > 1 else key_states.shape[0]
-        
+
         if self.active_vram_tokens + tokens_in_chunk <= self.vram_budget:
             # Keep in GPU VRAM
             self.prefix_table[chunk_id] = {
@@ -67,7 +68,7 @@ class HierarchicalKVCache:
 
         if entry["tier"] == "vram":
             return entry["k"], entry["v"]
-        
+
         # NVMe Page-in
         data = torch.load(entry["path"], map_location=target_device)
         return data["k"], data["v"]
@@ -86,6 +87,7 @@ class HierarchicalKVCache:
             "retrieval_accuracy": 1.0,
             "needle_matched": target_needle_hint
         }
+
 
 if __name__ == "__main__":
     cache = HierarchicalKVCache()

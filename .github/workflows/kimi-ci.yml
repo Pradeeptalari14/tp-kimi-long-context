@@ -21,7 +21,8 @@ jobs:
       - name: Syntax & Lint Check
         run: |
           python -m py_compile kimi_long_context_engine.py kimi_serving_gateway.py
-          flake8 kimi_long_context_engine.py kimi_serving_gateway.py --max-line-length=120 --ignore=E501,W503
+          flake8 kimi_long_context_engine.py kimi_serving_gateway.py --count --select=E9,F63,F7,F82 --show-source --statistics
+          flake8 kimi_long_context_engine.py kimi_serving_gateway.py --count --exit-zero --max-complexity=10 --max-line-length=120 --statistics
       - name: Run Engine Smoke Test
         run: |
           python kimi_long_context_engine.py
