@@ -1,3 +1,6 @@
+[![Ecosystem](https://img.shields.io/badge/Portfolio%20Ecosystem-341%20Studios-6366f1.svg)](https://pradeeptalari.me/projects/)
+[![Architecture DAG](https://img.shields.io/badge/Architecture-DAG%20%26%20Course-10b981.svg)](https://pradeeptalari.me/tools/repo-learning/)
+
 # 🌙 Moonshot Kimi K1.5: 2M Ultra-Long Context Cache Engine
 
 [![Kimi CI](https://github.com/Pradeeptalari14/tp-kimi-long-context/actions/workflows/kimi-ci.yml/badge.svg)](https://github.com/Pradeeptalari14/tp-kimi-long-context/actions)
@@ -193,3 +196,6 @@ When running K1.5 with 128k step reasoning budgets, attach step-level reward ver
 
 ## 📄 License
 This repository is licensed under the [MIT License](LICENSE).
+
+---
+*Synchronized with [Moonshot Kimi K1.5 2M Ultra-Long Context Studio Studio](https://pradeeptalari.me/tools/kimi-long-context/) & [Repository Learning DAG](https://pradeeptalari.me/tools/repo-learning/) — [Talari Pradeep Portfolio](https://pradeeptalari.me)*
